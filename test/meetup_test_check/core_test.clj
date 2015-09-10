@@ -6,6 +6,20 @@
             [clojure.test.check.properties :as prop]
             [clojure.test.check.clojure-test :refer [defspec]]))
 
+(comment
+
+  (gen/sample gen/int)
+
+  (gen/sample (gen/vector gen/string))
+
+  (nth (gen/sample-seq gen/string) 1)
+  (nth (gen/sample-seq gen/string) 10)
+  (nth (gen/sample-seq gen/string) 50)
+
+  (gen/sample gen/bytes)
+
+  )
+
 (defspec sort-idempotent
   100
   (prop/for-all [v (gen/vector gen/int)]
@@ -22,18 +36,3 @@
     (println int-vec)
     (= (sort int-vec) (m/custom-sort int-vec))))
 
-(comment
-
-  (gen/sample gen/int)
-
-  (gen/sample (gen/vector gen/string))
-
-  (nth (gen/sample-seq gen/string) 1)
-  (nth (gen/sample-seq gen/string) 10)
-  (nth (gen/sample-seq gen/string) 50)
-
-  )
-
-#_(defspec sum-now
-    100
-    (prop/for-all []))

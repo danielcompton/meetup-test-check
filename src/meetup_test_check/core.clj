@@ -1,10 +1,8 @@
-(ns meetup-test-check.core)
-
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(ns meetup-test-check.core
+  (:require [inet.data.ip :as ip]))
 
 (defn custom-sort [coll]
-  (rseq coll))
+  (seq (sort coll)))
 
+(defn ip-allowed? [ip]
+  (ip/network-contains? "0.0.0.0/1" ip))

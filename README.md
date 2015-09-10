@@ -1,14 +1,10 @@
 # meetup-test-check
 
-A Clojure library designed to ... well, that part is up to you.
+## Exercises
 
-## Usage
+* Write a function to generate anagrams, and verify that they are anagrams, now try with spaces
+* Write a math test to verify that the product of two numbers is greater than both of them
 
-FIXME
-
-## License
-
-Copyright © 2015 FIXME
 
 Distributed under the Eclipse Public License either version 1.0 or (at
 your option) any later version.
